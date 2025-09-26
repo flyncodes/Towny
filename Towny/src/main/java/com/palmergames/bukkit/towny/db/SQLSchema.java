@@ -20,7 +20,7 @@ import java.util.Locale;
 public class SQLSchema {
 
 	private static final String SQLDB_NAME = TownySettings.getSQLDBName();
-	private static final String TABLE_PREFIX = TownySettings.getSQLTablePrefix().toUpperCase(Locale.ROOT);
+	public static final String TABLE_PREFIX = TownySettings.getSQLTablePrefix().toUpperCase(Locale.ROOT);
 	private static final int MYSQL_DUPLICATE_COLUMN_ERR = 1060;
 
 	/**
@@ -159,7 +159,7 @@ public class SQLSchema {
 		List<String> columns = new ArrayList<>();
 		columns.add("`groupName` mediumtext NOT NULL");
 		columns.add("`groupPrice` float DEFAULT NULL");
-		columns.add("`town` VARCHAR(32) NOT NULL");
+		columns.add("`town` VARCHAR(36) NOT NULL");
 		columns.add("`metadata` text DEFAULT NULL");
 		return columns;
 	}
